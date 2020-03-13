@@ -1,27 +1,19 @@
-<h2> Friends Page </h2>
+<div class="col-md-6 mx-auto mb-5">
+  <h1 class="center bold">Friends Page</h1>
 
-<h3> First Name </h3>
-<h3> Last Name </h3>
+  <h2> Registered Users </h2>
+  <button type="button" class="btn btn-primary">Invite</button>
 
-<h2> Registered Users </h2>
+  <h2> Friend Requests </h2>
+  <button type="button" class="btn btn-success">Accept</button>
+  <button type="button" class="btn btn-danger">Decline</button><br />
 
-<h3> First Name </h3>
-<h3> Last Name </h3>
- 
-<a href="/static_pages/home">Invite</a>
+  <!-- Navigation buttons to Profile and Logout Pages --> 
+  <button type="button" class="btn btn-default">
+    <%= link_to 'My Profile', view_profile_path(current_user) %>
+  </button>
 
-<h2> Friend Requests </h2>
-
-<h3> First Name </h3>
-<h3> Last Name </h3>
-
-<a href="/static_pages/home">Accept</a>
-<a href="/friends_page/index">Decline</a> 
-
-<!-- Navigation buttons to Profile and Logout Pages --> 
-<button type="button" class="btn btn-secondary">
-    Profile
-</button>
-<button type="button" class="btn btn-secondary">
+  <button type="button" class="btn btn-default">
     <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-</button>
+  </button>
+</div>
