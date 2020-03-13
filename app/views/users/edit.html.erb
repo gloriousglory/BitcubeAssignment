@@ -1,0 +1,48 @@
+<div class="col-md-6 mx-auto mb-5">
+  <h1 class="center bold">Edit Profile</h1>
+
+  <%= form_for @user, url: update_profile_path, method: :patch do |f| %>
+    <!-- Information that a User completed when they registered -->  
+    <div class="row">
+        <div class="col-md-9">
+            <div class="input-group">
+                <span class="input-group-addon">First Name</span>
+                <%= f.text_field :first_name, autofocus: true, class: 'form-control' %>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-9">
+            <div class="input-group">
+                <span class="input-group-addon">Last Name</span>
+                <%= f.text_field :last_name, autofocus: true, class: 'form-control' %>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-9">
+            <div class="input-group">
+                <span class="input-group-addon">Email</span>
+                <%= f.text_field :email, autofocus: true, class: 'form-control' %>
+            </div>
+        </div>
+    </div>
+
+    <!-- Save/Update Profile -->
+    <button type="button" class="btn btn-default">
+        <%= link_to 'Save', edit_profile_path, method: :get %>
+        <i class="glyphicon glyphicon-ok"></i>
+    </button>
+
+    <!-- Navigation buttons to Friends and Logout Pages --> 
+    <button type="button" class="btn btn-default">
+        <%= link_to 'Friends', all_users_path %>
+    </button>
+
+    <button type="button" class="btn btn-default">
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+    </button>
+  <% end %>
+</div>
