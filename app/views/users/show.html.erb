@@ -1,0 +1,46 @@
+<div class="col-md-6 mx-auto mb-5">
+  <h1 class="center bold">My Profile</h1>
+
+  <!-- Information that a User completed when they registered -->  
+  <div class="row">
+    <div class="col-md-9">
+        <div class="input-group">
+            <span class="input-group-addon">First Name</span>
+            <p type="text" class="form-control" aria-describedby="basic-addon1"><%= @user.first_name %></p>
+        </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-9">
+        <div class="input-group">
+            <span class="input-group-addon">Last Name</span>
+            <p type="text" class="form-control" aria-describedby="basic-addon1"><%= @user.last_name %></p>
+        </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-9">
+        <div class="input-group">
+            <span class="input-group-addon">Email</span>
+            <p type="text" class="form-control" aria-describedby="basic-addon1"><%= @user.email %></p>
+        </div>
+    </div>
+  </div>
+
+  <!-- Navigation button to Edit Profile -->
+  <button type="button" class="btn btn-default">
+    <%= link_to 'Edit Profile', edit_profile_path, method: :get %>
+    <i class="glyphicon glyphicon-pencil"></i>
+  </button>
+
+  <!-- Navigation buttons to Friends and Logout Pages --> 
+  <button type="button" class="btn btn-default">
+    <%= link_to 'Friends', all_users_path %>
+  </button>
+
+  <button type="button" class="btn btn-default">
+    <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+  </button>
+</div>
