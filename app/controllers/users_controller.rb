@@ -24,17 +24,20 @@ class UsersController < ApplicationController
 
     def update
         @user = User.find(current_user.id)
-        fields = user_params
-        fields.delete(:current_password) unless fields[:current_password].present?
-        update_succesful = fields[:password].present? ? @user.update_with_password(fields) : @user.update_without_password(fields)
-        if update_succesful
-            # bypass validation in case their password changed
-            sign_in @user, :bypass => true
-            flash[:success] = 'Profile updated successfully.'
-            redirect_to view_profile_path(current_user)
-        else
-            render :edit
-        end
+        @user.update(user_params)
+        redirect_to view_profile_path(current_user)
+        # @user = User.find(current_user.id)
+        # fields = user_params
+        # fields.delete(:current_password) unless fields[:current_password].present?
+        # update_succesful = fields[:password].present? ? @user.update_with_password(fields) : @user.update_without_password(fields)
+        # if update_succesful
+        #     # bypass validation in case their password changed
+        #     sign_in @user, :bypass => true
+        #     flash[:success] = 'Profile updated successfully.'
+        #     redirect_to view_profile_path(current_user)
+        # else
+        #     render :edit
+        # end
     end
 
     def show
