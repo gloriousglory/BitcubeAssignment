@@ -1,0 +1,12 @@
+<h2> Home Page </h2>
+
+<!-- Navigation buttons to Profile, Friends and Logout Pages --> 
+<button type="button" class="btn btn-secondary">
+    Profile
+</button>
+<button type="button" class="btn btn-secondary">
+    <%= link_to 'Friends', all_users_path %>
+</button>
+<button type="button" class="btn btn-secondary">
+    <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+</button>

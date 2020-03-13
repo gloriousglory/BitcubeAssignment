@@ -1,0 +1,27 @@
+<h2> Friends Page </h2>
+
+<h3> First Name </h3>
+<h3> Last Name </h3>
+
+<h2> Registered Users </h2>
+
+<h3> First Name </h3>
+<h3> Last Name </h3>
+ 
+<a href="/static_pages/home">Invite</a>
+
+<h2> Friend Requests </h2>
+
+<h3> First Name </h3>
+<h3> Last Name </h3>
+
+<a href="/static_pages/home">Accept</a>
+<a href="/friends_page/index">Decline</a> 
+
+<!-- Navigation buttons to Profile and Logout Pages --> 
+<button type="button" class="btn btn-secondary">
+    Profile
+</button>
+<button type="button" class="btn btn-secondary">
+    <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+</button>

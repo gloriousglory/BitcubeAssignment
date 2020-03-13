@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BitcubeAssignment</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+    </script>
+
+  </head>
+
+  <body>
+
+    <!-- Flash messages -->
+    <% flash.each do |type, message| %>
+      <div class="alert alert-<%= type %> alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden-"true">X</button>
+        <% message %>
+      </div>
+    <% end %>
+
+    <!-- Correct Redirections 
+    <% if current_user %>
+      <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to 'Login', new_user_session_path %>
+    <% end %> -->
+
+    <%= yield %>
+    
+  </body>
+</html>
