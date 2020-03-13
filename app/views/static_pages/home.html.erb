@@ -1,12 +1,14 @@
-<h2> Home Page </h2>
+<div class="col-md-6 mx-auto mb-5">
+    <h2> Home Page </h2>
 
-<!-- Navigation buttons to Profile, Friends and Logout Pages --> 
-<button type="button" class="btn btn-secondary">
-    Profile
-</button>
-<button type="button" class="btn btn-secondary">
-    <%= link_to 'Friends', all_users_path %>
-</button>
-<button type="button" class="btn btn-secondary">
-    <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-</button>
+    <!-- Navigation buttons to Profile, Friends and Logout Pages --> 
+    <button type="button" class="btn btn-default">
+        <%= link_to 'My Profile', view_profile_path(current_user) %>
+    </button>
+    <button type="button" class="btn btn-default">
+        <%= link_to 'Friends', all_users_path %>
+    </button>
+    <button type="button" class="btn btn-default">
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+    </button>
+</div>
